@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <form action="calcular.php" method="post">
+        <label for="temp">Ingresar el valor de la temperatura</label>
+        <input type="number" name="temp">
+        <label for="unidad">Seleccionar la unidad de la temperatura</label>
+        <select name="unidad">
+            <option value="c">Celsius</option>
+            <option value="f">Fahrenheit</option>
+            <option value="k">Kelvin</option>
+        </select>
+        <input type="submit" value="Convertir">
+    </form>
+</body>
+</html>
