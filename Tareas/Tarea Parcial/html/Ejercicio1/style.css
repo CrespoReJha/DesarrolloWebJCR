@@ -1,0 +1,97 @@
+.contenido{
+   display: flex;
+   width: 900px;
+   height: auto;
+   border: 1px solid black;
+   flex-direction: column;
+}
+.encabezado{
+    display: flex;
+    border-bottom: 1px solid black;
+    height: 200px;
+    flex-direction: row;
+    background-color: rgb(184, 204, 228);
+}
+.encabezadoIzq{
+    display: flex;
+    justify-content: end;
+    width: 30%;
+}
+img{
+    width: 100px;
+    height: 120px;
+}
+.encabezadoDer{
+    display: flex;
+    width:70%;
+    padding-left: 50px;
+    flex-direction: column;
+    padding-top: 30px;
+}
+#rojo{
+    color: red;
+    font-weight: bold;
+}
+#azul{
+    color: blue;
+    padding-right: 150px;
+    font-weight: bold;
+    font-size: 13px;
+}
+#amarillo{
+    color: yellow;
+    font-weight: bold;
+}
+#verde{
+    color: green;
+    font-weight: bold;
+}
+.arial{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#sucre{
+    font-size: 10px;
+}
+#carrera{
+    padding-left: 180px;
+    padding-top: 10px;
+}
+#semestre{
+    padding-left: 210px;
+    padding-top: 10px;
+}
+.universidad{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.mayuscula{
+
+}
+.cuerpo{
+    display: flex;
+}
+.cuerpoIzq{
+    display: flex;
+    border-right: 1px solid black;
+    width: 120px;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(50, 50, 50);
+}
+.cuerpoDer{
+    width: 780px;
+    background-color: rgb(216, 216, 216);
+    padding-left: 10px;
+    padding-top: 20px;
+}
+#itemCuerpoIzq{
+    display: flex;
+    border: 1px solid black;
+    width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    background-color: white;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="tabla.php" method="post">
+        <label for="operacion">Elija la operacion: </label>
+        <select name="operacion" class="controles">
+            <option value="suma">Suma</option>
+            <option value="resta">Resta</option>
+            <option value="multiplicacion">Multiplicacion</option>
+            <option value="division">Division</option>
+        </select><br>
+        <label for="n">Introduzca n: </label>
+        <input type="number" name="n" class="controles"><br>
+        <input type="submit" value="Generar" class="controles">
+    </form>
+</body>
+</html>
