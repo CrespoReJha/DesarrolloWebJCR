@@ -1,0 +1,54 @@
+<!-- Realizar un programa en javascript ene l cual se tenga 2 inputs para introducir
+el valor de a y el valor de b, y un control select que tiene las opciones sumar, restar, multiplicar
+y dividir
+cuando el usuario cambie de seleccion, el programa debe hacer el calculo de la operacion seleccionada 
+con los valores en los inputs
+el resultado se debe mostrar en un div con borde rojo y padding de 50px denominado resultado-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="a">Introduce a</label>
+    <input type="number" name="a" id="a">
+    <br>
+    <label for="b">Introduce b</label>
+    <input type="number" name="b" id="b">
+    <br>
+    <select name="operacion" id="operacion">
+        <option value="suma">Suma</option>
+        <option value="resta">Resta</option>
+        <option value="multiplicacion">Multiplicacion</option>
+        <option value="division">Division</option>
+    </select>
+    <div id="resultado">&nbsp;</div>
+    <br>
+  
+    <script>
+        document.getElementById('operacion').onchange = function() {
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var operacion = document.getElementById('operacion').value;
+            var c = 0;
+            if (operacion == 'suma') {
+                c = parseInt(a) + parseInt(b);
+            } else if (operacion == 'resta') {
+                c = parseInt(a) - parseInt(b);
+            } else if (operacion == 'multiplicacion') {
+                c = parseInt(a) * parseInt(b);
+            } else if (operacion == 'division') {
+                c = parseInt(a) / parseInt(b);
+            }
+            document.getElementById('resultado').innerHTML = c;
+            document.getElementById('resultado').style.border = 'solid red 1px';
+            document.getElementById('resultado').style.padding = '50px';
+
+        }
+
+        console.log(document.getElementById('operacion'));
+    </script>
+</body>
+</html>
