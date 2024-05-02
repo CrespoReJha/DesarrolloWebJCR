@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="a">Introduce a:</label>
+    <input type="number" id="a" name="a"><br>
+    <label for="b">Introduce b:</label>
+    <input type="number" id="b" name="b"><br>
+    <label for="c">Introduce c:</label>
+    <input type="number" id="c" name="c"><br>
+    <input type="button" value="Calcular" onclick="calcularX()">
+    <br>
+    X1:
+    <div id="x1"></div>
+    X2:
+    <div id="x2"></div>
+    
+    <script>
+        var dom = document.getElementById('x1');
+        console.log(dom);
+        function calcularX() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            var discriminante = b * b - 4 * a * c;
+            var x1, x2;
+
+            if (discriminante >= 0) {
+                x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+                x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+            } else {
+                x1 = (-b / (2 * a)) + " + " + (Math.sqrt(-discriminante) / (2 * a)) + "i";
+                x2 = (-b / (2 * a)) + " - " + (Math.sqrt(-discriminante) / (2 * a)) + "i";
+            }
+            
+            document.getElementById('x1').innerHTML = x1;
+            document.getElementById('x2').innerHTML = x2;
+            //document.getElementById('x1').style.border = 'solid black 1px';
+            document.getElementById('x1').style.width = '400px';
+            //document.getElementById('x2').style.border = 'solid black 1px';
+            document.getElementById('x2').style.width = '400px';
+            if (discriminante < 0) {
+                document.getElementById('x1').style.backgroundColor = 'red';
+                document.getElementById('x2').style.backgroundColor = 'red';
+            }else{
+                document.getElementById('x1').style.backgroundColor = 'white';
+                document.getElementById('x2').style.backgroundColor = 'white';
+            }
+        }
+    </script>
+</body>
+</html>
