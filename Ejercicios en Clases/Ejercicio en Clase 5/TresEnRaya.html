@@ -4,27 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .boton{
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+        }
+        .cont{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+        }
+        .mensaje{
+            font-size: 20px;
+            display: flex;
+            border: 1px solid black;
+            padding: 10px;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-    <div id="Contenido">
-        <table>
-            <tr>
-                <td><input type="button" id="0" value="" onclick="jugar(0)"></td>
-                <td><input type="button" id="1" value="" onclick="jugar(1)"></td>
-                <td><input type="button" id="2" value="" onclick="jugar(2)"></td>
-            </tr>
-            <tr>
-                <td><input type="button" id="3" value="" onclick="jugar(3)"></td>
-                <td><input type="button" id="4" value="" onclick="jugar(4)"></td>
-                <td><input type="button" id="5" value="" onclick="jugar(5)"></td>
-            </tr>
-            <tr>
-                <td><input type="button" id="6" value="" onclick="jugar(6)"></td>
-                <td><input type="button" id="7" value="" onclick="jugar(7)"></td>
-                <td><input type="button" id="8" value="" onclick="jugar(8)"></td>
-            </tr>
-        </table>
-        <div id="mensaje">turno x</div>
+    <div id="Contenido" class="cont">
+        <div>
+            <table>
+                <tr>
+                    <td><input class="boton" type="button" id="0" value="" onclick="jugar(0)"></td>
+                    <td><input class="boton" type="button" id="1" value="" onclick="jugar(1)"></td>
+                    <td><input class="boton" type="button" id="2" value="" onclick="jugar(2)"></td>
+                </tr>
+                <tr>
+                    <td><input class="boton" type="button" id="3" value="" onclick="jugar(3)"></td>
+                    <td><input class="boton" type="button" id="4" value="" onclick="jugar(4)"></td>
+                    <td><input class="boton" type="button" id="5" value="" onclick="jugar(5)"></td>
+                </tr>
+                <tr>
+                    <td><input class="boton" type="button" id="6" value="" onclick="jugar(6)"></td>
+                    <td><input class="boton" type="button" id="7" value="" onclick="jugar(7)"></td>
+                    <td><input class="boton" type="button" id="8" value="" onclick="jugar(8)"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="mensaje" class="mensaje">turno x</div>
     </div>
     <script>
         function jugar(n){
@@ -33,10 +56,14 @@
             if(boton.value==""){
                 if(turno.innerHTML=="turno x"){
                     boton.value = 'x';
+                    boton.style.backgroundColor="red";
                     turno.innerHTML = "turno o";
+                    turno.style.backgroundColor="blue";
                 }else{
                     boton.value = 'o';
+                    boton.style.backgroundColor="blue";
                     turno.innerHTML = "turno x";
+                    turno.style.backgroundColor="red";
                 }
             }else{
 
