@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <label for="texto">Ingresar un texto:</label>
+        <input type="text" id="texto">
+    <div id="contenido">
+
+    </div>
+    
+    <script>
+        var contenido = document.getElementById('contenido');
+        document.getElementById('texto').addEventListener('keypress', function(event){
+            console.log(event.key);
+            if (event.key == 'Enter'){
+                //event.preventDefault(); // para que no se resetee
+                var texto = document.getElementById('texto').value;
+                var elemento = document.createElement('p');
+                elemento.innerHTML = texto;
+                contenido.appendChild(elemento);
+            }
+        });
+    </script>
+</body>
+</html>

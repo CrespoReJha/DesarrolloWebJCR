@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo"><br>
+
+        <label for="mensaje">Mensaje:</label>
+        <input id="mensaje" name="mensaje"><br>
+
+        <input type="button" value="Enviar" onclick="validarFormulario()">
+    </form>
+    <script>
+        function validarFormulario() {
+            var nombre = document.getElementById("nombre").value;
+            var correo = document.getElementById("correo").value;
+            var mensaje = document.getElementById("mensaje").value;
+
+            if (nombre == ''){
+                alert("no ingreso el nombre");
+                return false;
+            }else if (correo == ''){
+                alert("no ingreso el correo");
+                return false;
+            }else if (mensaje == ''){
+                alert("no ingreso el mensaje");
+                return false;
+            }else{
+                alert("Mensaje enviado");
+            }
+        }
+    </script>
+</body>
+</html>
