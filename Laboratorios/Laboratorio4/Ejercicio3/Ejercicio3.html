@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="imagen" src="Captura de pantalla 2024-05-14 201916.png" style="width: 200px; height: 100px;">
+    <br>
+    <button onclick="agrandar()">Agrandar</button>
+    <button onclick="reducir()">Reducir</button>
+    <br>
+    <input type="number" id="cantidad">
+    
+    <script>
+        let imagen = document.getElementById("imagen");
+        console.log(imagen);
+        function agrandar() {
+            let cantidad = parseInt(document.getElementById("cantidad").value);
+            let nuevoAncho = imagen.width + cantidad;
+            imagen.style.width = nuevoAncho + "px";
+
+        }
+        
+        function reducir() {
+            let cantidad = parseInt(document.getElementById("cantidad").value);
+            let nuevoAncho = imagen.width - cantidad;
+            imagen.style.width = nuevoAncho + "px";
+        }
+    </script>
+</body>

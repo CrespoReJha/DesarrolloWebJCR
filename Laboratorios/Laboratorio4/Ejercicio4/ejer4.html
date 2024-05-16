@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Elemento de la lista:
+    <input type="text" id="elemento">
+    <button onclick="adicionar()">Añadir</button>
+    <ul id="lista">
+    </ul>
+    <script>
+        function adicionar() {
+            let elemento = document.getElementById("elemento");
+            let lista = document.getElementById("lista");
+            let nuevoElemento = document.createElement("li");
+            nuevoElemento.innerHTML = elemento.value;   
+            if ((nuevoElemento.innerHTML.indexOf(" de ") !== -1) 
+                || (nuevoElemento.innerHTML.indexOf("de ") !== -1)
+                || (nuevoElemento.innerHTML.indexOf(" de") !== -1)) {
+                nuevoElemento.style.backgroundColor = "yellow";
+            }          
+            lista.appendChild(nuevoElemento);
+            elemento.value = "";
+        }
+    </script>
+</body>
+</html>

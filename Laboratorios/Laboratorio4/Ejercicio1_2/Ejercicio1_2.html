@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tabla{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table id="tabla" border="1">
+    </table>
+    <h2>Ingrese otro estudiante:</h2>
+    <label for="nombre">Nombre y Apellidos:</label>
+    <input id="nombre"><br>
+    <label for="edad">Edad:</label>
+    <input id="edad"><br>
+    <label for="materia">Materia:</label>
+    <input id="materia"><br>
+    <label for="nota">Nota:</label>
+    <input id="nota"><br>
+    <button id="agregar">Agregar</button>
+    <script>
+        let tabla = document.getElementById('tabla');
+        let contador = 0;
+        function Calificaciones (materia, nota){
+            this.materia = materia;
+            this.nota = nota;
+        }
+
+        function Estudiante(apellidos_nombres, edad, materia, nota){
+            this.apellidos_nombres = apellidos_nombres;
+            this.edad = edad;
+            this.calificaciones = new Calificaciones(materia, nota);
+        }
+        function mostrar() {
+            tabla.innerHTML = '';
+            tabla.innerHTML += `<tr>
+                                <th>nro</th>
+                                <th>Apellidos Nombres</th>
+                                <th>Edad</th>
+                                <th>Materia</th>
+                                <th>Nota</th>
+                            </tr>`;
+            for (let i = 0; i < estudiantes.length; i++){
+                tabla.innerHTML += `<tr id="${i}">
+                                <td>${i+1}</td>
+                                <td>${estudiantes[i].apellidos_nombres}</td>
+                                <td>${estudiantes[i].edad}</td>
+                                <td>${estudiantes[i].calificaciones.materia}</td>
+                                <td>${estudiantes[i].calificaciones.nota}</td>
+                                </tr>`;
+            }  
+            encontrarMejorEstudiante();
+        }
+        document.getElementById('agregar').addEventListener('click', function() {
+            let materia = document.getElementById('materia').value;
+            let nota = document.getElementById('nota').value;
+            let nombre = document.getElementById('nombre').value;
+            let edad = document.getElementById('edad').value;
+            let estudiante = new Estudiante(nombre, edad, materia, nota);
+            estudiantes[contador++] = estudiante;
+            mostrar();
+            encontrarMejorEstudiante();
+        });
+        
+        let estudiantes = new Array();
+        let estudiante1 = new Estudiante('Juan Quispe', 20,'si241', 90);
+        let estudiante2 = new Estudiante('Julian Molina', 19,'si346', 55);
+        let estudiante3 = new Estudiante('Maria Perez', 20, 'sis576', 67);
+        let estudiante4 = new Estudiante('Eva Copa', 20,'si232', 68);
+        estudiantes[contador++] = estudiante1;
+        estudiantes[contador++] = estudiante2;
+        estudiantes[contador++] = estudiante3;
+        estudiantes[contador++] = estudiante4;
+        mostrar();
+        function encontrarMejorEstudiante() {
+            let ide = 0;
+            let mejorNota = estudiantes[0].calificaciones.nota;
+
+            for (let i = 0; i < estudiantes.length; i++) {
+                if (estudiantes[i].calificaciones.nota >= mejorNota) {
+                    ide = i;
+                }
+            }
+            document.getElementById(ide).style.backgroundColor = 'red';
+        }
+    </script>
+</body>
+</html>
