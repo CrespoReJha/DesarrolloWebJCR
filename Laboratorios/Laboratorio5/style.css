@@ -1,0 +1,48 @@
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezado{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+.nombre{
+    padding-top: 30px;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+.pestanias{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    flex-direction: row;
+}
+#entrada{
+    padding: 10px;
+}
+#redactar{
+    padding: 10px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+#salida{
+    padding: 10px;
+}
+.contenido{
+    width: 600px;
+    border: 1px solid black;
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    
+}
