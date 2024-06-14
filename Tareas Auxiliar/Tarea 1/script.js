@@ -53,7 +53,7 @@ function crearTabla(data) {
   tabla.innerHTML = htmlString;
 }
 
-async function pregunta3() {
+async function pregunta3() {//modifique varias cosas de la funcion ya que estaba mas familiarizado de esta forma
   fetch("barra.html")
   .then((response) => response.text())
   .then((data) => {

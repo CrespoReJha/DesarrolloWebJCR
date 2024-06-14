@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
 $texto = $_GET['texto'];
-$sql = "SELECT nombre FROM ocupaciones WHERE nombre LIKE '%$texto%'";
+$sql = "SELECT nombre FROM ocupaciones WHERE nombre LIKE '%$texto%'";//ocupaciones solo tienen Programador, Agricultor, Ing. en Ciencias de la Computacion
 
 $result = $con->query($sql);
 $resultados = array();
